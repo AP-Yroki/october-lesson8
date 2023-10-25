@@ -76,3 +76,21 @@ def sum_divider(nums):
         return "TypeError"
     except ValueError:
         return "ValueError"
+
+
+def dct_join(dct1, dct2):
+    res = dct1 | dct2
+    return res
+
+
+dct = {
+    1: {1: 11, 2: 12, 3: 13},
+    2: {1: 21, 2: 22, 3: 23},
+    3: {1: 24, 2: 25, 3: 26},
+}
+
+
+
+def dct_sum(dct):
+    total_sum = sum(sum(inner_dict.values()) for inner_dict in dct.values())
+    return total_sum
