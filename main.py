@@ -1,3 +1,5 @@
+import random
+
 def num(x):
     try:
         x = float(x)
@@ -98,3 +100,23 @@ def max_min(list):
 
 def get_divisors(numbers):
     return [[i for i in range(1, num + 1) if num % i == 0] for num in numbers]
+
+
+def non_repeat(N, start, end):
+    if end - start + 1 < N:
+        return "Невозможно создать список без повторяющихся чисел."
+
+    result, prev = [], None
+    while len(result) < N:
+        new_num = random.randint(start, end)
+        if new_num != prev:
+            result.append(prev := new_num)
+
+    return result
+
+def random_color():
+    try:
+        colors = []
+        return random.choice(colors)
+    except IndexError:
+        return 'IndexError'
